@@ -18,6 +18,13 @@
 		DCBA41F329E97FCC0051F2A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA41F129E97FCC0051F2A8 /* Main.storyboard */; };
 		DCBA41F529E97FCE0051F2A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBA41F429E97FCE0051F2A8 /* Assets.xcassets */; };
 		DCBA41F829E97FCE0051F2A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA41F629E97FCE0051F2A8 /* LaunchScreen.storyboard */; };
+		DCFDDA6D29F008090057B7DB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6929F008080057B7DB /* Montserrat-Medium.ttf */; };
+		DCFDDA6E29F008090057B7DB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6A29F008080057B7DB /* Montserrat-Bold.ttf */; };
+		DCFDDA6F29F008090057B7DB /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6B29F008080057B7DB /* Montserrat-Light.ttf */; };
+		DCFDDA7029F008090057B7DB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6C29F008090057B7DB /* Montserrat-Regular.ttf */; };
+		DCFDDA7229F00DDD0057B7DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA7129F00DDD0057B7DB /* Extensions.swift */; };
+		DCFDDA7429F0163F0057B7DB /* DayTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA7329F0163F0057B7DB /* DayTemp.swift */; };
+		DCFDDA7729F01F610057B7DB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA7629F01F610057B7DB /* SearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		DCBA41F429E97FCE0051F2A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCBA41F729E97FCE0051F2A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBA41F929E97FCE0051F2A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFDDA6929F008080057B7DB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DCFDDA6A29F008080057B7DB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		DCFDDA6B29F008080057B7DB /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		DCFDDA6C29F008090057B7DB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		DCFDDA7129F00DDD0057B7DB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DCFDDA7329F0163F0057B7DB /* DayTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTemp.swift; sourceTree = "<group>"; };
+		DCFDDA7629F01F610057B7DB /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +102,8 @@
 		DC327D9C29EA995F0028271D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DCBA41EF29E97FCC0051F2A8 /* MainViewController.swift */,
+				DCFDDA7529F018600057B7DB /* Controller */,
+				DCFDDA7329F0163F0057B7DB /* DayTemp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				DC327DA029EA99D30028271D /* FlexibleLayout.swift */,
+				DCFDDA7129F00DDD0057B7DB /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -143,12 +159,33 @@
 				DC327D9A29EA99470028271D /* Delegate */,
 				DC327D9E29EA99740028271D /* Service */,
 				DC327D9F29EA997D0028271D /* Helpers */,
+				DCFDDA6829F007F30057B7DB /* Fonts */,
 				DCBA41F129E97FCC0051F2A8 /* Main.storyboard */,
 				DCBA41F429E97FCE0051F2A8 /* Assets.xcassets */,
 				DCBA41F629E97FCE0051F2A8 /* LaunchScreen.storyboard */,
 				DCBA41F929E97FCE0051F2A8 /* Info.plist */,
 			);
 			path = Neobis_iOS_WeatherApp;
+			sourceTree = "<group>";
+		};
+		DCFDDA6829F007F30057B7DB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDDA6A29F008080057B7DB /* Montserrat-Bold.ttf */,
+				DCFDDA6B29F008080057B7DB /* Montserrat-Light.ttf */,
+				DCFDDA6929F008080057B7DB /* Montserrat-Medium.ttf */,
+				DCFDDA6C29F008090057B7DB /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DCFDDA7529F018600057B7DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA41EF29E97FCC0051F2A8 /* MainViewController.swift */,
+				DCFDDA7629F01F610057B7DB /* SearchController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +248,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFDDA6F29F008090057B7DB /* Montserrat-Light.ttf in Resources */,
+				DCFDDA6E29F008090057B7DB /* Montserrat-Bold.ttf in Resources */,
+				DCFDDA7029F008090057B7DB /* Montserrat-Regular.ttf in Resources */,
 				DCBA41F829E97FCE0051F2A8 /* LaunchScreen.storyboard in Resources */,
 				DCBA41F529E97FCE0051F2A8 /* Assets.xcassets in Resources */,
+				DCFDDA6D29F008090057B7DB /* Montserrat-Medium.ttf in Resources */,
 				DCBA41F329E97FCC0051F2A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,8 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFDDA7429F0163F0057B7DB /* DayTemp.swift in Sources */,
+				DCFDDA7729F01F610057B7DB /* SearchController.swift in Sources */,
 				DC327DA129EA99D30028271D /* FlexibleLayout.swift in Sources */,
 				DCBA41F029E97FCC0051F2A8 /* MainViewController.swift in Sources */,
+				DCFDDA7229F00DDD0057B7DB /* Extensions.swift in Sources */,
 				DC327DA529EA9E930028271D /* CityModel.swift in Sources */,
 				DC327DA329EA99EC0028271D /* Service.swift in Sources */,
 				DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */,
