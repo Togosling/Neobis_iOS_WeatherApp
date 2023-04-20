@@ -7,6 +7,14 @@
 
 import UIKit
 
+extension NSObject {
+    func flexibleHeight(to: CGFloat) -> CGFloat {
+        return UIScreen.main.bounds.height * to / 926
+    }
+    func flexibleWidth(to: CGFloat) -> CGFloat {
+        return UIScreen.main.bounds.width * to / 428
+    }
+}
 
 extension UILabel {
     func createCategoryLabel(text: String) -> UILabel{
