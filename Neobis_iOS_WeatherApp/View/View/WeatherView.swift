@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MainView: UIView {
+class WeatherView: UIView {
     
     let searchButton: UIButton = {
         let button = UIButton(type: .system)

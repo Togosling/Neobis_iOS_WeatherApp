@@ -11,13 +11,13 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    let mainView = MainView()
+    let weatherView = WeatherView()
     
     override func viewDidLoad() {
         super .viewDidLoad()
         
         setupViews()
-        mainView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
+        weatherView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     }
     
     @objc fileprivate func handleSearch() {
@@ -27,8 +27,8 @@ class MainViewController: UIViewController {
     }
         
     fileprivate func setupViews() {
-        view.addSubview(mainView)
-        mainView.snp.makeConstraints { make in
+        view.addSubview(weatherView)
+        weatherView.snp.makeConstraints { make in
             make.size.equalToSuperview()
         }
       
