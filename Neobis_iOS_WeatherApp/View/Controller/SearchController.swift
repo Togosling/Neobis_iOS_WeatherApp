@@ -11,6 +11,7 @@ import SnapKit
 
 class SearchController: UIViewController {
     
+    var weatherViewModel = WeatherViewModel()
     let searchView = SearchView()
     
     override func viewDidLoad() {
@@ -23,14 +24,8 @@ class SearchController: UIViewController {
     }
     
     @objc func handleSearch() {
-        guard let searchCity = searchView.searchTextField.text else {return}
-        Service.shared.fetchCityData(city: searchCity) { cityGroup in
-            guard let city = cityGroup.first else {return}
-            Service.shared.fetchTempData(lat: city.lat, long: city.lon) { weatherGroup in
-                print(weatherGroup.main.temp, weatherGroup.main.humidity, weatherGroup.main.pressure, weatherGroup.visibility, weatherGroup.weather?.first?.icon, weatherGroup.wind?.speed)
-            }
-        }
-        
+        guard let search = searchView.searchTextField.text else {return}
+        weatherViewModel.fetchCityData(city: search)
     }
     
     @objc func handleClose() {
@@ -44,3 +39,4 @@ class SearchController: UIViewController {
         }
     }
 }
+

@@ -10,7 +10,7 @@ import UIKit
 
 class DayTemp: UIView {
     
-    let dayOfTheWeekLabel: UILabel = {
+    var dayOfTheWeekLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.font = UIFont(name: "Montserrat-Medium", size: 10)
@@ -18,7 +18,7 @@ class DayTemp: UIView {
         return label
     }()
     
-    let borderView: UIView = {
+    var borderView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.borderWidth = 1
@@ -27,12 +27,12 @@ class DayTemp: UIView {
         return view
     }()
     
-    let imageView: UIImageView = {
+    var imageView: UIImageView = {
         let iv = UIImageView()
         return iv
     }()
     
-    let tempLabel: UILabel = {
+    var tempLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.font = UIFont(name: "Montserrat-Regular", size: 12)
@@ -47,28 +47,31 @@ class DayTemp: UIView {
         imageView.image = UIImage(named: image)
         tempLabel.text = temp
         setupViews()
+        setupConstraints()
     }
     
     fileprivate func setupViews() {
         addSubview(dayOfTheWeekLabel)
+        addSubview(borderView)
+        addSubview(imageView)
+        addSubview(tempLabel)
+    }
+    fileprivate func setupConstraints() {
         dayOfTheWeekLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
         }
-        addSubview(borderView)
         borderView.snp.makeConstraints { make in
             make.top.equalTo(dayOfTheWeekLabel.snp.bottom).offset(2)
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.top.equalTo(borderView.snp.top).offset(10)
             make.height.equalTo(26)
             make.width.equalTo(26)
             make.centerX.equalToSuperview()
         }
-        addSubview(tempLabel)
         tempLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(4)
             make.centerX.equalToSuperview()

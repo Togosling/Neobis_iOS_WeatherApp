@@ -11,6 +11,7 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
+    var weatherViewModel = WeatherViewModel()
     let weatherView = WeatherView()
     
     override func viewDidLoad() {
@@ -18,6 +19,9 @@ class MainViewController: UIViewController {
         
         setupViews()
         weatherView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
+        weatherViewModel.bindable.bind { city in
+            print(city)
+        }
     }
     
     @objc fileprivate func handleSearch() {

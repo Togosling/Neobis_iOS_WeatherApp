@@ -12,8 +12,8 @@ struct WeatherGroup: Codable {
     let weather: [Weather]?
     let base: String?
     let main: Main
-    let visibility: Int?
-    let wind: Wind?
+    let visibility: Int
+    let wind: Wind
     let clouds: Clouds?
     let dt: Int?
     let sys: Sys?
@@ -34,8 +34,8 @@ struct Coord: Codable {
 
 // MARK: - Main
 struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double?
-    let pressure, humidity, seaLevel, grndLevel: Int?
+    let temp, feelsLike, tempMin, tempMax: Double
+    let pressure, humidity, seaLevel, grndLevel: Int
 
     enum CodingKeys: String, CodingKey {
         case temp
@@ -58,12 +58,12 @@ struct Sys: Codable {
 // MARK: - Weather
 struct Weather: Codable {
     let id: Int?
-    let main, description, icon: String?
+    let main, description, icon: String
 }
 
 // MARK: - Wind
 struct Wind: Codable {
-    let speed: Double?
+    let speed: Double
     let deg: Int?
     let gust: Double?
 }

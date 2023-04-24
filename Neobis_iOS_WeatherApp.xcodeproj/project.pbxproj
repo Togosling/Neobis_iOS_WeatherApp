@@ -12,6 +12,7 @@
 		DC327DA329EA99EC0028271D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA229EA99EC0028271D /* Service.swift */; };
 		DC327DA529EA9E930028271D /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA429EA9E930028271D /* CityModel.swift */; };
 		DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA729EAA67D0028271D /* TemperatureModel.swift */; };
+		DC76573029F651FC00BA94DA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76572F29F651FC00BA94DA /* Bindable.swift */; };
 		DCBA41EC29E97FCC0051F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */; };
 		DCBA41EE29E97FCC0051F2A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41ED29E97FCC0051F2A8 /* SceneDelegate.swift */; };
 		DCBA41F029E97FCC0051F2A8 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */; };
@@ -27,7 +28,7 @@
 		DCFDDA7729F01F610057B7DB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA7629F01F610057B7DB /* SearchController.swift */; };
 		DCFDDA8229F1309E0057B7DB /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA8129F1309E0057B7DB /* WeatherView.swift */; };
 		DCFDDA8429F132440057B7DB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA8329F132440057B7DB /* SearchView.swift */; };
-		DCFDDA8629F13D160057B7DB /* WeatherViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA8529F13D160057B7DB /* WeatherViewMode.swift */; };
+		DCFDDA8629F13D160057B7DB /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDDA8529F13D160057B7DB /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DC327DA229EA99EC0028271D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DC327DA429EA9E930028271D /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		DC327DA729EAA67D0028271D /* TemperatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModel.swift; sourceTree = "<group>"; };
+		DC76572F29F651FC00BA94DA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		DCBA41E829E97FCC0051F2A8 /* Neobis_iOS_WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCBA41ED29E97FCC0051F2A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		DCFDDA7629F01F610057B7DB /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		DCFDDA8129F1309E0057B7DB /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		DCFDDA8329F132440057B7DB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		DCFDDA8529F13D160057B7DB /* WeatherViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewMode.swift; sourceTree = "<group>"; };
+		DCFDDA8529F13D160057B7DB /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,7 @@
 		DC327D9D29EA99670028271D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DCFDDA8529F13D160057B7DB /* WeatherViewMode.swift */,
+				DCFDDA8529F13D160057B7DB /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,8 +137,17 @@
 			children = (
 				DC327DA029EA99D30028271D /* FlexibleLayout.swift */,
 				DCFDDA7129F00DDD0057B7DB /* Extensions.swift */,
+				DC76572F29F651FC00BA94DA /* Bindable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DC76572E29F63F7800BA94DA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDDA7329F0163F0057B7DB /* DayTemp.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		DCBA41DF29E97FCC0051F2A8 = {
@@ -199,8 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				DCFDDA8129F1309E0057B7DB /* WeatherView.swift */,
-				DCFDDA7329F0163F0057B7DB /* DayTemp.swift */,
 				DCFDDA8329F132440057B7DB /* SearchView.swift */,
+				DC76572E29F63F7800BA94DA /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,11 +338,12 @@
 				DCFDDA7429F0163F0057B7DB /* DayTemp.swift in Sources */,
 				DCFDDA7729F01F610057B7DB /* SearchController.swift in Sources */,
 				DC327DA129EA99D30028271D /* FlexibleLayout.swift in Sources */,
-				DCFDDA8629F13D160057B7DB /* WeatherViewMode.swift in Sources */,
+				DCFDDA8629F13D160057B7DB /* WeatherViewModel.swift in Sources */,
 				DCBA41F029E97FCC0051F2A8 /* WeatherViewController.swift in Sources */,
 				DCFDDA8429F132440057B7DB /* SearchView.swift in Sources */,
 				DCFDDA7229F00DDD0057B7DB /* Extensions.swift in Sources */,
 				DC327DA529EA9E930028271D /* CityModel.swift in Sources */,
+				DC76573029F651FC00BA94DA /* Bindable.swift in Sources */,
 				DC327DA329EA99EC0028271D /* Service.swift in Sources */,
 				DCFDDA8229F1309E0057B7DB /* WeatherView.swift in Sources */,
 				DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */,
