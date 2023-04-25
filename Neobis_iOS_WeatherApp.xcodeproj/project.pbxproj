@@ -11,6 +11,7 @@
 		DC327DA329EA99EC0028271D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA229EA99EC0028271D /* Service.swift */; };
 		DC327DA529EA9E930028271D /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA429EA9E930028271D /* CityModel.swift */; };
 		DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA729EAA67D0028271D /* TemperatureModel.swift */; };
+		DC660FF529F7EEDC005F27E4 /* NextWeekModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */; };
 		DC76573029F651FC00BA94DA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76572F29F651FC00BA94DA /* Bindable.swift */; };
 		DCBA41EC29E97FCC0051F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */; };
 		DCBA41EE29E97FCC0051F2A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41ED29E97FCC0051F2A8 /* SceneDelegate.swift */; };
@@ -37,6 +38,7 @@
 		DC327DA229EA99EC0028271D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DC327DA429EA9E930028271D /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		DC327DA729EAA67D0028271D /* TemperatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModel.swift; sourceTree = "<group>"; };
+		DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekModel.swift; sourceTree = "<group>"; };
 		DC76572F29F651FC00BA94DA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		DCBA41E829E97FCC0051F2A8 /* Neobis_iOS_WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				DC327DA429EA9E930028271D /* CityModel.swift */,
 				DC327DA729EAA67D0028271D /* TemperatureModel.swift */,
+				DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				DCFDDA8229F1309E0057B7DB /* WeatherView.swift in Sources */,
 				DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */,
 				DCBA41EC29E97FCC0051F2A8 /* AppDelegate.swift in Sources */,
+				DC660FF529F7EEDC005F27E4 /* NextWeekModel.swift in Sources */,
 				DCBA41EE29E97FCC0051F2A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

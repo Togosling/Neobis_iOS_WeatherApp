@@ -42,6 +42,21 @@ class MainViewController: UIViewController {
                 self?.weatherView.visibilityIndexLabel.text = "\(String(weather?.visibility ?? 0)) m"
                 self?.weatherView.windIndexLabel.text = "\(String(weather?.windStatus ?? 0)) mph"
                 self?.weatherView.mainTempImageView.sd_setImage(with: weather?.weatherIconUrl)
+                self?.weatherView.firstDay.tempLabel.text = "\(String(weather?.temp1 ?? 0))°C"
+                self?.weatherView.secondDay.tempLabel.text = "\(String(weather?.temp2 ?? 0))°C"
+                self?.weatherView.thirdDay.tempLabel.text = "\(String(weather?.temp3 ?? 0))°C"
+                self?.weatherView.forthDay.tempLabel.text = "\(String(weather?.temp4 ?? 0))°C"
+                self?.weatherView.fifthDay.tempLabel.text = "\(String(weather?.temp5 ?? 0))°C"
+                self?.weatherView.firstDay.imageView.sd_setImage(with: weather?.icon1)
+                self?.weatherView.secondDay.imageView.sd_setImage(with: weather?.icon2)
+                self?.weatherView.thirdDay.imageView.sd_setImage(with: weather?.icon3)
+                self?.weatherView.forthDay.imageView.sd_setImage(with: weather?.icon4)
+                self?.weatherView.fifthDay.imageView.sd_setImage(with: weather?.icon5)
+                self?.weatherView.firstDay.dayOfTheWeekLabel.text = weather?.date1
+                self?.weatherView.secondDay.dayOfTheWeekLabel.text = weather?.date2
+                self?.weatherView.thirdDay.dayOfTheWeekLabel.text = weather?.date3
+                self?.weatherView.forthDay.dayOfTheWeekLabel.text = weather?.date4
+                self?.weatherView.fifthDay.dayOfTheWeekLabel.text = weather?.date5
                 self?.hud.dismiss(animated: true)
             }
         }
