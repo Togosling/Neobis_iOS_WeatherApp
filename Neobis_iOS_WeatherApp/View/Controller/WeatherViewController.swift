@@ -19,13 +19,14 @@ class MainViewController: UIViewController {
         
         setupViews()
         weatherView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
-        weatherViewModel.bindable.bind { city in
+        weatherViewModel.bindable.bind(observer: { city in
             print(city)
-        }
+        })
     }
     
     @objc fileprivate func handleSearch() {
         let searchController = SearchController()
+        searchController.weatherViewModel = weatherViewModel
         searchController.modalPresentationStyle = .fullScreen
         present(searchController, animated: true)
     }

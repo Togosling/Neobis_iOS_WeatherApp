@@ -11,7 +11,7 @@ import SnapKit
 
 class SearchController: UIViewController {
     
-    var weatherViewModel = WeatherViewModel()
+    var weatherViewModel: WeatherViewModel?
     let searchView = SearchView()
     
     override func viewDidLoad() {
@@ -25,7 +25,8 @@ class SearchController: UIViewController {
     
     @objc func handleSearch() {
         guard let search = searchView.searchTextField.text else {return}
-        weatherViewModel.fetchCityData(city: search)
+        weatherViewModel?.fetchCityData(city: search)
+        self.dismiss(animated: true)
     }
     
     @objc func handleClose() {
