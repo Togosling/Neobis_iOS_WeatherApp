@@ -26,6 +26,13 @@ class Service {
         
     }
     
+    func fetchTempDataForWeek(lat: Double, long: Double, completion: @escaping ()->() {
+        let urlString = "api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(long)&appid=9179ff35255c8bb1407f79ae716cfe38"
+        
+        fetchGenericJsonData(urlString: urlString, completion: completion)
+        
+    }
+    
     func fetchGenericJsonData<T:Decodable> (urlString: String, completion: @escaping (T) -> ()) {
         
         guard let url = URL(string: urlString) else {return}

@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherView: UIView {
     
-    var searchButton: UIButton = {
+    let searchButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "Search"), for: .normal)
         button.tintColor = .black
@@ -44,7 +44,7 @@ class WeatherView: UIView {
         return label
     }()
     
-    var tempView: UIView = {
+    fileprivate var tempView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
@@ -65,7 +65,7 @@ class WeatherView: UIView {
         return label
     }()
     
-    var windLabel : UILabel = {
+    fileprivate let windLabel : UILabel = {
         let label = UILabel().createCategoryLabel(text: "Wind Status")
         return label
     }()
@@ -73,7 +73,7 @@ class WeatherView: UIView {
         let label = UILabel().createIndexLabel(text: "7 mph")
         return label
     }()
-    var visibilityLabel : UILabel = {
+    fileprivate let visibilityLabel : UILabel = {
         let label = UILabel().createCategoryLabel(text: "Visibility")
         return label
     }()
@@ -81,7 +81,7 @@ class WeatherView: UIView {
         let label = UILabel().createIndexLabel(text: "6.4 miles")
         return label
     }()
-    var humidityLabel : UILabel = {
+    fileprivate let humidityLabel : UILabel = {
         let label = UILabel().createCategoryLabel(text: "Humidity")
         return label
     }()
@@ -89,7 +89,7 @@ class WeatherView: UIView {
         let label = UILabel().createIndexLabel(text: "85%")
         return label
     }()
-    var airPressureLabel : UILabel = {
+    fileprivate let airPressureLabel : UILabel = {
         let label = UILabel().createCategoryLabel(text: "Air Pressure")
         return label
     }()
@@ -98,7 +98,7 @@ class WeatherView: UIView {
         return label
     }()
     
-    var nextweekView: UIView = {
+    fileprivate let nextweekView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
@@ -110,7 +110,7 @@ class WeatherView: UIView {
     var forthDay = DayTemp(frame: .zero, day: "Wednesday", image: "rain", temp: "10° C")
     var fifthDay = DayTemp(frame: .zero, day: "Thursday", image: "rain", temp: "10° C")
     
-    var nextDaysLabel: UILabel = {
+    fileprivate let nextDaysLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.font = UIFont(name: "Montserrat-Bold", size: 14)
@@ -184,6 +184,7 @@ class WeatherView: UIView {
         mainTempImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(tempView.snp.top).offset(flexibleHeight(to: 5))
+            make.width.height.equalTo(flexibleWidth(to: 50))
         }
         tempLabel.snp.makeConstraints { make in
             make.center.equalTo(tempView.snp.center)

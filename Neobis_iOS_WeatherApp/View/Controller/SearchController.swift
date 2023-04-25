@@ -12,7 +12,7 @@ import SnapKit
 class SearchController: UIViewController {
     
     var weatherViewModel: WeatherViewModel?
-    let searchView = SearchView()
+    fileprivate let searchView = SearchView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,13 @@ class SearchController: UIViewController {
         searchView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     }
     
-    @objc func handleSearch() {
+    @objc fileprivate func handleSearch() {
         guard let search = searchView.searchTextField.text else {return}
         weatherViewModel?.fetchCityData(city: search)
         self.dismiss(animated: true)
     }
     
-    @objc func handleClose() {
+    @objc fileprivate func handleClose() {
         self.dismiss(animated: true)
     }
     
