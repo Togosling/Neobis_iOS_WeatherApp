@@ -11,7 +11,7 @@ import SnapKit
 
 class SearchController: UIViewController {
     
-    var weatherViewModel: WeatherViewModel?
+    fileprivate let searchViewModel: SearchViewModel
     fileprivate let searchView = SearchView()
     
     override func viewDidLoad() {
@@ -23,9 +23,14 @@ class SearchController: UIViewController {
         searchView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     }
     
+    init(searchViewModel: SearchViewModel){
+        self.searchViewModel = searchViewModel
+        super .init(nibName: nil, bundle: nil)
+    }
+    
     @objc fileprivate func handleSearch() {
-        guard let search = searchView.searchTextField.text else {return}
-        weatherViewModel?.fetchCityData(city: search)
+        guard let searchCity = searchView.searchTextField.text else {return}
+        searchViewModel.searchCity = searchCity
         self.dismiss(animated: true)
     }
     
@@ -38,6 +43,9 @@ class SearchController: UIViewController {
         searchView.snp.makeConstraints { make in
             make.size.equalToSuperview()
         }
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

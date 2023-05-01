@@ -11,6 +11,8 @@
 		DC327DA329EA99EC0028271D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA229EA99EC0028271D /* Service.swift */; };
 		DC327DA529EA9E930028271D /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA429EA9E930028271D /* CityModel.swift */; };
 		DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC327DA729EAA67D0028271D /* TemperatureModel.swift */; };
+		DC4E61DC29FF94A7004DFCB7 /* OverallWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E61DB29FF94A7004DFCB7 /* OverallWeatherModel.swift */; };
+		DC4E61DE29FF9794004DFCB7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E61DD29FF9794004DFCB7 /* SearchViewModel.swift */; };
 		DC660FF529F7EEDC005F27E4 /* NextWeekModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */; };
 		DC76573029F651FC00BA94DA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76572F29F651FC00BA94DA /* Bindable.swift */; };
 		DCBA41EC29E97FCC0051F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 		DC327DA229EA99EC0028271D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DC327DA429EA9E930028271D /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		DC327DA729EAA67D0028271D /* TemperatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModel.swift; sourceTree = "<group>"; };
+		DC4E61DB29FF94A7004DFCB7 /* OverallWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallWeatherModel.swift; sourceTree = "<group>"; };
+		DC4E61DD29FF9794004DFCB7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekModel.swift; sourceTree = "<group>"; };
 		DC76572F29F651FC00BA94DA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		DCBA41E829E97FCC0051F2A8 /* Neobis_iOS_WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,7 @@
 				DC327DA429EA9E930028271D /* CityModel.swift */,
 				DC327DA729EAA67D0028271D /* TemperatureModel.swift */,
 				DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */,
+				DC4E61DB29FF94A7004DFCB7 /* OverallWeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFDDA8529F13D160057B7DB /* WeatherViewModel.swift */,
+				DC4E61DD29FF9794004DFCB7 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,7 +343,9 @@
 			files = (
 				DCFDDA7429F0163F0057B7DB /* DayTemp.swift in Sources */,
 				DCFDDA7729F01F610057B7DB /* SearchController.swift in Sources */,
+				DC4E61DE29FF9794004DFCB7 /* SearchViewModel.swift in Sources */,
 				DCFDDA8629F13D160057B7DB /* WeatherViewModel.swift in Sources */,
+				DC4E61DC29FF94A7004DFCB7 /* OverallWeatherModel.swift in Sources */,
 				DCBA41F029E97FCC0051F2A8 /* WeatherViewController.swift in Sources */,
 				DCFDDA8429F132440057B7DB /* SearchView.swift in Sources */,
 				DCFDDA7229F00DDD0057B7DB /* Extensions.swift in Sources */,

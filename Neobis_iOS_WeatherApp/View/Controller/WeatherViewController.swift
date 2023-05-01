@@ -13,7 +13,7 @@ import JGProgressHUD
 
 class MainViewController: UIViewController {
     
-    fileprivate var weatherViewModel = WeatherViewModel()
+    fileprivate let weatherViewModel: WeatherViewModel
     fileprivate let weatherView = WeatherView()
     fileprivate let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
@@ -29,8 +29,13 @@ class MainViewController: UIViewController {
         weatherObserver()
     }
     
+    init(weatherViewModel: WeatherViewModel) {
+        self.weatherViewModel = weatherViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     fileprivate func weatherObserver() {
-        weatherViewModel.bindable.bind {[weak self] weather in
+        weatherViewModel.bindableWeather.bind {[weak self] weather in
             DispatchQueue.main.async {
                 self?.hud.show(in: self?.view ?? UIView())
                 self?.weatherView.tempLabel.text = "\(String(weather?.temp ?? 0))°C"
@@ -63,8 +68,7 @@ class MainViewController: UIViewController {
     }
     
     @objc fileprivate func handleSearch() {
-        let searchController = SearchController()
-        searchController.weatherViewModel = weatherViewModel
+        let searchController = SearchController(searchViewModel: weatherViewModel.searchViewModel)
         searchController.modalPresentationStyle = .fullScreen
         present(searchController, animated: true)
     }
@@ -75,6 +79,9 @@ class MainViewController: UIViewController {
             make.size.equalToSuperview()
         }
       
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
