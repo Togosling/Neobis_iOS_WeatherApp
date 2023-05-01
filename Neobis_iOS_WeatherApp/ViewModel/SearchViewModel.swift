@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol SearchViewModelType {
+    
+}
+
 class SearchViewModel {
     
     var bindableSearchCity = Bindable<String>()

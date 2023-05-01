@@ -7,18 +7,13 @@
 
 import Foundation
 
-//protocol WeatherViewModelType {
-//
-//    func fetchCityData(city: String)
-//    func fetchWeatherData(lat: Double, long: Double)
-//    func fetchNextWeekData(lat: Double, long: Double)
-//}
+protocol WeatherViewModelType {
 
+}
 
 class WeatherViewModel {
     
     var searchViewModel: SearchViewModel
-    
     var bindableWeather = Bindable<OverallWeatherModel>()
     fileprivate var overallWeatherModel =  OverallWeatherModel()
     
@@ -33,7 +28,7 @@ class WeatherViewModel {
     
     fileprivate func fetchWeatherData(lat: Double, long: Double) {
         Service.shared.fetchTempData(lat: lat, long: long) {[weak self] weatherGroup in
-            self?.overallWeatherModel.date = self?.currentDate()
+            self?.overallWeatherModel.date = DateFormat.shared.currentDate()
             self?.overallWeatherModel.temp = Int(weatherGroup.main.temp - 273)
             let weatherIcon = "http://openweathermap.org/img/w/\(weatherGroup.weather?.first?.icon ?? "").png"
             self?.overallWeatherModel.weatherIconUrl = URL(string: weatherIcon)
@@ -61,36 +56,15 @@ class WeatherViewModel {
             self?.overallWeatherModel.icon3 = URL(string: weatherIcon3)
             self?.overallWeatherModel.icon4 = URL(string: weatherIcon4)
             self?.overallWeatherModel.icon5 = URL(string: weatherIcon5)
-            self?.overallWeatherModel.date1 = self?.nextDate(day: 1)
-            self?.overallWeatherModel.date2 = self?.nextDate(day: 2)
-            self?.overallWeatherModel.date3 = self?.nextDate(day: 3)
-            self?.overallWeatherModel.date4 = self?.nextDate(day: 4)
-            self?.overallWeatherModel.date5 = self?.nextDate(day: 5)
+            self?.overallWeatherModel.date1 = DateFormat.shared.nextDate(day: 1)
+            self?.overallWeatherModel.date2 = DateFormat.shared.nextDate(day: 2)
+            self?.overallWeatherModel.date3 = DateFormat.shared.nextDate(day: 3)
+            self?.overallWeatherModel.date4 = DateFormat.shared.nextDate(day: 4)
+            self?.overallWeatherModel.date5 = DateFormat.shared.nextDate(day: 5)
             self?.bindableWeather.value = self?.overallWeatherModel
         }
     }
-    
-    fileprivate func currentDate() -> String {
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: Date())
-        let month = calendar.component(.month, from: Date())
-        let year = calendar.component(.year, from: Date())
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US")
-        let mothnName = dateFormatter.monthSymbols[month - 1]
-        return "Today, \(day) \(mothnName), \(year)"
-    }
-    fileprivate func nextDate(day: Int) -> String {
-        let calendar = Calendar.current
-        let today = Date()
-        guard let nextDate = calendar.date(byAdding: .day, value: day, to: today) else {return ""}
-        let weekDay = calendar.component(.weekday, from: nextDate)
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US")
-        let weekDayName = dateFormatter.weekdaySymbols[weekDay - 1]
-        return weekDayName
-    }
-    
+        
     init(searchViewModel: SearchViewModel){
         self.searchViewModel = searchViewModel
         searchViewModel.bindableSearchCity.bind { [weak self] searchCity in
