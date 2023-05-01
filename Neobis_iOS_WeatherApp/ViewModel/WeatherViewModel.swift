@@ -22,6 +22,13 @@ class WeatherViewModel {
     var bindableWeather = Bindable<OverallWeatherModel>()
     fileprivate var overallWeatherModel =  OverallWeatherModel()
     
+    init(searchViewModel: SearchViewModel){
+        self.searchViewModel = searchViewModel
+        searchViewModel.bindableSearchCity.bind { [weak self] searchCity in
+            self?.fetchCityData(city: searchCity ?? "")
+        }
+    }
+
     fileprivate func fetchCityData(city: String) {
         Service.shared.fetchCityData(city: city) {[weak self] cityGroup in
             guard let city = cityGroup.first else {return}
@@ -89,12 +96,5 @@ class WeatherViewModel {
         dateFormatter.locale = Locale(identifier: "en_US")
         let weekDayName = dateFormatter.weekdaySymbols[weekDay - 1]
         return weekDayName
-    }
-    
-    init(searchViewModel: SearchViewModel){
-        self.searchViewModel = searchViewModel
-        searchViewModel.bindableSearchCity.bind { [weak self] searchCity in
-            self?.fetchCityData(city: searchCity ?? "")
-        }
     }
 }
