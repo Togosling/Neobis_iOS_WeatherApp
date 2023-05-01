@@ -29,11 +29,6 @@ class MainViewController: UIViewController {
         weatherObserver()
     }
     
-    init(weatherViewModel: WeatherViewModel) {
-        self.weatherViewModel = weatherViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
     fileprivate func weatherObserver() {
         weatherViewModel.bindableWeather.bind {[weak self] weather in
             DispatchQueue.main.async {
@@ -80,6 +75,12 @@ class MainViewController: UIViewController {
         }
       
     }
+    
+    init(weatherViewModel: WeatherViewModel) {
+        self.weatherViewModel = weatherViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

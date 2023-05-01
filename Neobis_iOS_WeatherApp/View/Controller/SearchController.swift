@@ -23,11 +23,6 @@ class SearchController: UIViewController {
         searchView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     }
     
-    init(searchViewModel: SearchViewModel){
-        self.searchViewModel = searchViewModel
-        super .init(nibName: nil, bundle: nil)
-    }
-    
     @objc fileprivate func handleSearch() {
         guard let searchCity = searchView.searchTextField.text else {return}
         searchViewModel.searchCity = searchCity
@@ -44,6 +39,12 @@ class SearchController: UIViewController {
             make.size.equalToSuperview()
         }
     }
+    
+    init(searchViewModel: SearchViewModel){
+        self.searchViewModel = searchViewModel
+        super .init(nibName: nil, bundle: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
