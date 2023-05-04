@@ -7,11 +7,17 @@
 
 import UIKit
 import SnapKit
+import JGProgressHUD
 
 class SearchController: UIViewController {
     
     fileprivate var searchViewModel: SearchViewModelType
     fileprivate let searchView = SearchView()
+    fileprivate let hud: JGProgressHUD = {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Looking for Weather"
+        return hud
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +26,13 @@ class SearchController: UIViewController {
         setupViews()
         searchView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        hud.dismiss(animated: true)
+    }
         
     @objc fileprivate func handleSearch() {
+        hud.show(in: self.view)
         guard let searchCity = searchView.searchTextField.text else {return}
         searchViewModel.searchCity = searchCity
     }
