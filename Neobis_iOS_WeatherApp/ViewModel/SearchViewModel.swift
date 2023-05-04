@@ -16,7 +16,7 @@ class SearchViewModel {
     var bindableSearchWeather = Bindable<OverallWeatherModel>()
     var searchCity: String? {didSet {fetchCityData(city: searchCity ?? "")}}
     
-    fileprivate var overallWeatherModel =  OverallWeatherModel()
+    fileprivate var overallWeatherModel = OverallWeatherModel()
     
     fileprivate func fetchCityData(city: String) {
         Service.shared.fetchCityData(city: city) {[weak self] cityGroup in

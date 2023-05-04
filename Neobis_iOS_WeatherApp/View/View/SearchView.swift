@@ -16,14 +16,7 @@ class SearchView: UIView {
         view.layer.cornerRadius = 50
         return view
     }()
-    
-     let closeButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "close"), for: .normal)
-        button.tintColor = .black
-        return button
-    }()
-    
+        
      let searchTextField: CustomTextField = {
         let textfield = CustomTextField()
         textfield.placeholder = "SEARCH LOCATION"
@@ -58,7 +51,6 @@ class SearchView: UIView {
     
     fileprivate func setupViews() {
         addSubview(whiteView)
-        addSubview(closeButton)
         addSubview(searchTextField)
         addSubview(searchButton)
     }
@@ -69,12 +61,9 @@ class SearchView: UIView {
             make.width.equalToSuperview()
             make.height.equalTo(flexibleHeight(to: 350))
         }
-        closeButton.snp.makeConstraints { make in
-            make.top.equalTo(whiteView.snp.top).offset(flexibleHeight(to: 30))
-            make.trailing.equalTo(whiteView.snp.trailing).offset(-(flexibleWidth(to: 30)))
-        }
+
         searchTextField.snp.makeConstraints { make in
-            make.top.equalTo(closeButton.snp.bottom).offset(flexibleHeight(to: 30))
+            make.top.equalTo(whiteView.snp.top).offset(flexibleHeight(to: 80))
             make.width.equalTo(flexibleWidth(to: 300))
             make.height.equalTo(flexibleHeight(to: 50))
             make.centerX.equalToSuperview()

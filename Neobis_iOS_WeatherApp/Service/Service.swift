@@ -33,7 +33,7 @@ class Service {
         
     }
     
-    func fetchGenericJsonData<T:Decodable> (urlString: String, completion: @escaping (T) -> ()) {
+    fileprivate func fetchGenericJsonData<T:Decodable> (urlString: String, completion: @escaping (T) -> ()) {
         
         guard let url = URL(string: urlString) else {return}
         

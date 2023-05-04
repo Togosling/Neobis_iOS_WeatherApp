@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import JGProgressHUD
 
 
 class SearchController: UIViewController {
@@ -14,25 +15,40 @@ class SearchController: UIViewController {
     fileprivate let searchViewModel: SearchViewModel
     fileprivate let searchView = SearchView()
     
+    fileprivate let hud: JGProgressHUD = {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Looking for weather"
+        return hud
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.gradient(view: view)
         setupViews()
-        searchView.closeButton.addTarget(self, action: #selector(handleClose), for: .touchUpInside)
         searchView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchUpInside)
     }
-    
+        
     @objc fileprivate func handleSearch() {
+        self.hud.show(in: self.view)
         guard let searchCity = searchView.searchTextField.text else {return}
         searchViewModel.searchCity = searchCity
-        self.dismiss(animated: true)
+        searchObserver()
     }
     
-    @objc fileprivate func handleClose() {
-        self.dismiss(animated: true)
+    fileprivate func searchObserver() {
+        searchViewModel.bindableSearchWeather.bind {[weak self] weather in
+            guard let weather = weather else {return}
+            DispatchQueue.main.async {
+                self?.hud.dismiss(animated: true)
+                let weatherViewModel = WeatherViewModel(overallWeather: weather)
+                let weatherViewController = WeatherViewController(weatherViewModel: weatherViewModel)
+                weatherViewController.modalPresentationStyle = .fullScreen
+                self?.present(weatherViewController, animated: true)
+            }
+        }
     }
-    
+        
     fileprivate func setupViews() {
         view.addSubview(searchView)
         searchView.snp.makeConstraints { make in

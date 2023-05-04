@@ -209,8 +209,8 @@
 		DCFDDA7529F018600057B7DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */,
 				DCFDDA7629F01F610057B7DB /* SearchController.swift */,
+				DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
