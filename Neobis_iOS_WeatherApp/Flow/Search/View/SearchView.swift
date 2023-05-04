@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class SearchView: UIView {
     
     fileprivate let whiteView: UIView = {

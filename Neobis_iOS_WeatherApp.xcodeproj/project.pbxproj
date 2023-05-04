@@ -17,11 +17,15 @@
 		DC660FF529F7EEDC005F27E4 /* NextWeekModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC660FF429F7EEDC005F27E4 /* NextWeekModel.swift */; };
 		DC76573029F651FC00BA94DA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76572F29F651FC00BA94DA /* Bindable.swift */; };
 		DCBA41EC29E97FCC0051F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */; };
-		DCBA41EE29E97FCC0051F2A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41ED29E97FCC0051F2A8 /* SceneDelegate.swift */; };
 		DCBA41F029E97FCC0051F2A8 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */; };
 		DCBA41F329E97FCC0051F2A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA41F129E97FCC0051F2A8 /* Main.storyboard */; };
 		DCBA41F529E97FCE0051F2A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBA41F429E97FCE0051F2A8 /* Assets.xcassets */; };
 		DCBA41F829E97FCE0051F2A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBA41F629E97FCE0051F2A8 /* LaunchScreen.storyboard */; };
+		DCDA07EC2A0397B60035B880 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA07EB2A0397B60035B880 /* Coordinator.swift */; };
+		DCDA07EE2A03980B0035B880 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA07ED2A03980B0035B880 /* AppCoordinator.swift */; };
+		DCDA07F92A039F890035B880 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA07F82A039F890035B880 /* SearchCoordinator.swift */; };
+		DCDA07FB2A03A1390035B880 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA07FA2A03A1390035B880 /* BaseNavigationController.swift */; };
+		DCDA07FE2A03A27A0035B880 /* WeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA07FD2A03A27A0035B880 /* WeatherCoordinator.swift */; };
 		DCFDDA6D29F008090057B7DB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6929F008080057B7DB /* Montserrat-Medium.ttf */; };
 		DCFDDA6E29F008090057B7DB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6A29F008080057B7DB /* Montserrat-Bold.ttf */; };
 		DCFDDA6F29F008090057B7DB /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFDDA6B29F008080057B7DB /* Montserrat-Light.ttf */; };
@@ -48,12 +52,16 @@
 		DC76572F29F651FC00BA94DA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		DCBA41E829E97FCC0051F2A8 /* Neobis_iOS_WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCBA41ED29E97FCC0051F2A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		DCBA41F229E97FCC0051F2A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCBA41F429E97FCE0051F2A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCBA41F729E97FCE0051F2A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBA41F929E97FCE0051F2A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDA07EB2A0397B60035B880 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DCDA07ED2A03980B0035B880 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DCDA07F82A039F890035B880 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		DCDA07FA2A03A1390035B880 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		DCDA07FD2A03A27A0035B880 /* WeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCoordinator.swift; sourceTree = "<group>"; };
 		DCFDDA6929F008080057B7DB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		DCFDDA6A29F008080057B7DB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		DCFDDA6B29F008080057B7DB /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -99,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				DCBA41EB29E97FCC0051F2A8 /* AppDelegate.swift */,
-				DCBA41ED29E97FCC0051F2A8 /* SceneDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -113,24 +120,6 @@
 				DC4E61DB29FF94A7004DFCB7 /* OverallWeatherModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		DC327D9C29EA995F0028271D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DCFDDA8029F1308A0057B7DB /* View */,
-				DCFDDA7529F018600057B7DB /* Controller */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DC327D9D29EA99670028271D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				DCFDDA8529F13D160057B7DB /* WeatherViewModel.swift */,
-				DC4E61DD29FF9794004DFCB7 /* SearchViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DC327D9E29EA99740028271D /* Service */ = {
@@ -149,14 +138,6 @@
 				DC4E61DF2A003140004DFCB7 /* DateFormat.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		DC76572E29F63F7800BA94DA /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				DCFDDA7329F0163F0057B7DB /* DayTemp.swift */,
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 		DCBA41DF29E97FCC0051F2A8 = {
@@ -180,9 +161,10 @@
 		DCBA41EA29E97FCC0051F2A8 /* Neobis_iOS_WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				DC327D9D29EA99670028271D /* ViewModel */,
+				DCDA07EA2A0397A30035B880 /* Coordinator */,
+				DCDA07EF2A039D830035B880 /* Flow */,
+				DCDA07FC2A03A2030035B880 /* Base */,
 				DC327D9B29EA99560028271D /* Model */,
-				DC327D9C29EA995F0028271D /* View */,
 				DC327D9E29EA99740028271D /* Service */,
 				DC327D9F29EA997D0028271D /* Helpers */,
 				DC327D9A29EA99470028271D /* Delegate */,
@@ -195,6 +177,103 @@
 			path = Neobis_iOS_WeatherApp;
 			sourceTree = "<group>";
 		};
+		DCDA07EA2A0397A30035B880 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07EB2A0397B60035B880 /* Coordinator.swift */,
+				DCDA07ED2A03980B0035B880 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DCDA07EF2A039D830035B880 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07F12A039D9B0035B880 /* Search */,
+				DCDA07F02A039D950035B880 /* Weather */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		DCDA07F02A039D950035B880 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07F52A039E3C0035B880 /* Coordinator */,
+				DCDA07F72A039E4C0035B880 /* ViewModel */,
+				DCDA07F62A039E450035B880 /* View */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		DCDA07F12A039D9B0035B880 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07F22A039DB70035B880 /* Coordinator */,
+				DCDA07F32A039DC00035B880 /* ViewModel */,
+				DCDA07F42A039DD70035B880 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DCDA07F22A039DB70035B880 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07F82A039F890035B880 /* SearchCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DCDA07F32A039DC00035B880 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E61DD29FF9794004DFCB7 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCDA07F42A039DD70035B880 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDDA7629F01F610057B7DB /* SearchController.swift */,
+				DCFDDA8329F132440057B7DB /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCDA07F52A039E3C0035B880 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07FD2A03A27A0035B880 /* WeatherCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DCDA07F62A039E450035B880 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */,
+				DCFDDA8129F1309E0057B7DB /* WeatherView.swift */,
+				DCFDDA7329F0163F0057B7DB /* DayTemp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCDA07F72A039E4C0035B880 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDDA8529F13D160057B7DB /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCDA07FC2A03A2030035B880 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DCDA07FA2A03A1390035B880 /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		DCFDDA6829F007F30057B7DB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,25 +283,6 @@
 				DCFDDA6C29F008090057B7DB /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		DCFDDA7529F018600057B7DB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DCFDDA7629F01F610057B7DB /* SearchController.swift */,
-				DCBA41EF29E97FCC0051F2A8 /* WeatherViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		DCFDDA8029F1308A0057B7DB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DCFDDA8129F1309E0057B7DB /* WeatherView.swift */,
-				DCFDDA8329F132440057B7DB /* SearchView.swift */,
-				DC76572E29F63F7800BA94DA /* Subviews */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,21 +406,25 @@
 			files = (
 				DCFDDA7429F0163F0057B7DB /* DayTemp.swift in Sources */,
 				DCFDDA7729F01F610057B7DB /* SearchController.swift in Sources */,
+				DCDA07FE2A03A27A0035B880 /* WeatherCoordinator.swift in Sources */,
 				DC4E61DE29FF9794004DFCB7 /* SearchViewModel.swift in Sources */,
 				DCFDDA8629F13D160057B7DB /* WeatherViewModel.swift in Sources */,
 				DC4E61DC29FF94A7004DFCB7 /* OverallWeatherModel.swift in Sources */,
 				DC4E61E02A003140004DFCB7 /* DateFormat.swift in Sources */,
 				DCBA41F029E97FCC0051F2A8 /* WeatherViewController.swift in Sources */,
 				DCFDDA8429F132440057B7DB /* SearchView.swift in Sources */,
+				DCDA07FB2A03A1390035B880 /* BaseNavigationController.swift in Sources */,
+				DCDA07F92A039F890035B880 /* SearchCoordinator.swift in Sources */,
+				DCDA07EC2A0397B60035B880 /* Coordinator.swift in Sources */,
 				DCFDDA7229F00DDD0057B7DB /* Extensions.swift in Sources */,
 				DC327DA529EA9E930028271D /* CityModel.swift in Sources */,
 				DC76573029F651FC00BA94DA /* Bindable.swift in Sources */,
 				DC327DA329EA99EC0028271D /* Service.swift in Sources */,
 				DCFDDA8229F1309E0057B7DB /* WeatherView.swift in Sources */,
 				DC327DA829EAA67D0028271D /* TemperatureModel.swift in Sources */,
+				DCDA07EE2A03980B0035B880 /* AppCoordinator.swift in Sources */,
 				DCBA41EC29E97FCC0051F2A8 /* AppDelegate.swift in Sources */,
 				DC660FF529F7EEDC005F27E4 /* NextWeekModel.swift in Sources */,
-				DCBA41EE29E97FCC0051F2A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

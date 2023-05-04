@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class DateFormat {
     
     static let shared = DateFormat()

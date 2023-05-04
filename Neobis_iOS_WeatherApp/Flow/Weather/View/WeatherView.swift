@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class WeatherView: UIView {
     
     let searchButton: UIButton = {

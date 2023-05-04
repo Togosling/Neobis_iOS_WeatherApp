@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-
 class WeatherViewController: UIViewController {
     
     fileprivate var weatherViewModel: WeatherViewModelType
@@ -53,7 +52,7 @@ class WeatherViewController: UIViewController {
     }
     
     @objc fileprivate func handleSearch() {
-        self.dismiss(animated: true)
+        weatherViewModel.goBackToSearch()
     }
         
     fileprivate func setupViews() {

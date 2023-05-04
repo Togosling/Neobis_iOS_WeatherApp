@@ -8,7 +8,6 @@
 import Foundation
 
 protocol SearchViewModelType {
-    var bindableSearchWeather: Bindable<OverallWeatherModel> {get set}
     var searchCity: String? {get set}
     var overallWeatherModel: OverallWeatherModel {get set}
     func fetchCityData(city: String)
@@ -18,12 +17,11 @@ protocol SearchViewModelType {
 
 class SearchViewModel: SearchViewModelType {
     
-    var bindableSearchWeather = Bindable<OverallWeatherModel>()
+    var coordinator = SearchCoordinator(navController: BaseNavigationController.init())
     var searchCity: String? {didSet {fetchCityData(city: searchCity ?? "")}}
+    var overallWeatherModel = OverallWeatherModel()
     
-    internal var overallWeatherModel = OverallWeatherModel()
-    
-    internal func fetchCityData(city: String) {
+    func fetchCityData(city: String) {
         Service.shared.fetchCityData(city: city) {[weak self] cityGroup in
             guard let city = cityGroup.first else {return}
             self?.overallWeatherModel.city = city.name
@@ -32,7 +30,7 @@ class SearchViewModel: SearchViewModelType {
         }
     }
     
-    internal func fetchWeatherData(lat: Double, long: Double) {
+    func fetchWeatherData(lat: Double, long: Double) {
         Service.shared.fetchTempData(lat: lat, long: long) {[weak self] weatherGroup in
             self?.overallWeatherModel.date = DateFormat.shared.currentDate()
             self?.overallWeatherModel.temp = Int(weatherGroup.main.temp - 273)
@@ -45,7 +43,7 @@ class SearchViewModel: SearchViewModelType {
             self?.fetchNextWeekData(lat: lat, long: long)
         }
     }
-    internal func fetchNextWeekData(lat: Double, long: Double) {
+    func fetchNextWeekData(lat: Double, long: Double) {
         Service.shared.fetchTempDataForWeek(lat: lat, long: long) { [weak self] nextweek in
             self?.overallWeatherModel.temp1 = Int(nextweek.list[0].main.temp - 273)
             self?.overallWeatherModel.temp2 = Int(nextweek.list[1].main.temp - 273)
@@ -67,7 +65,11 @@ class SearchViewModel: SearchViewModelType {
             self?.overallWeatherModel.date3 = DateFormat.shared.nextDate(day: 3)
             self?.overallWeatherModel.date4 = DateFormat.shared.nextDate(day: 4)
             self?.overallWeatherModel.date5 = DateFormat.shared.nextDate(day: 5)
-            self?.bindableSearchWeather.value = self?.overallWeatherModel
+            self?.gotoWeather()
         }
+    }
+    
+    func gotoWeather() {
+        coordinator.showWeather(overallWeatherModel: overallWeatherModel)
     }
 }

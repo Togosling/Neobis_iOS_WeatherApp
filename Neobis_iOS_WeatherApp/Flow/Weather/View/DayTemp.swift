@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class DayTemp: UIView {
     
     var dayOfTheWeekLabel: UILabel = {
