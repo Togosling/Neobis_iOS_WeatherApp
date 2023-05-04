@@ -8,10 +8,10 @@
 import Foundation
 
 protocol WeatherViewModelType {
-
+    var weather: OverallWeatherModel {get set}
 }
 
-class WeatherViewModel {
+class WeatherViewModel: WeatherViewModelType {
     
     var weather: OverallWeatherModel
            

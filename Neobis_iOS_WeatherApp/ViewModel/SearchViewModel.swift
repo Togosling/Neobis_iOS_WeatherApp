@@ -8,17 +8,22 @@
 import Foundation
 
 protocol SearchViewModelType {
-    
+    var bindableSearchWeather: Bindable<OverallWeatherModel> {get set}
+    var searchCity: String? {get set}
+    var overallWeatherModel: OverallWeatherModel {get set}
+    func fetchCityData(city: String)
+    func fetchWeatherData(lat: Double, long: Double)
+    func fetchNextWeekData(lat: Double, long: Double)
 }
 
-class SearchViewModel {
+class SearchViewModel: SearchViewModelType {
     
     var bindableSearchWeather = Bindable<OverallWeatherModel>()
     var searchCity: String? {didSet {fetchCityData(city: searchCity ?? "")}}
     
-    fileprivate var overallWeatherModel = OverallWeatherModel()
+    internal var overallWeatherModel = OverallWeatherModel()
     
-    fileprivate func fetchCityData(city: String) {
+    internal func fetchCityData(city: String) {
         Service.shared.fetchCityData(city: city) {[weak self] cityGroup in
             guard let city = cityGroup.first else {return}
             self?.overallWeatherModel.city = city.name
@@ -27,7 +32,7 @@ class SearchViewModel {
         }
     }
     
-    fileprivate func fetchWeatherData(lat: Double, long: Double) {
+    internal func fetchWeatherData(lat: Double, long: Double) {
         Service.shared.fetchTempData(lat: lat, long: long) {[weak self] weatherGroup in
             self?.overallWeatherModel.date = DateFormat.shared.currentDate()
             self?.overallWeatherModel.temp = Int(weatherGroup.main.temp - 273)
@@ -40,7 +45,7 @@ class SearchViewModel {
             self?.fetchNextWeekData(lat: lat, long: long)
         }
     }
-    fileprivate func fetchNextWeekData(lat: Double, long: Double) {
+    internal func fetchNextWeekData(lat: Double, long: Double) {
         Service.shared.fetchTempDataForWeek(lat: lat, long: long) { [weak self] nextweek in
             self?.overallWeatherModel.temp1 = Int(nextweek.list[0].main.temp - 273)
             self?.overallWeatherModel.temp2 = Int(nextweek.list[1].main.temp - 273)

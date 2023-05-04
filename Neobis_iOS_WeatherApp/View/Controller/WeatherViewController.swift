@@ -12,7 +12,7 @@ import SDWebImage
 
 class WeatherViewController: UIViewController {
     
-    fileprivate let weatherViewModel: WeatherViewModel
+    fileprivate var weatherViewModel: WeatherViewModelType
     fileprivate let weatherView = WeatherView()
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    init(weatherViewModel: WeatherViewModel) {
+    init(weatherViewModel: WeatherViewModelType) {
         self.weatherViewModel = weatherViewModel
         super.init(nibName: nil, bundle: nil)
     }

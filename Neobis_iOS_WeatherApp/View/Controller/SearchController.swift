@@ -12,7 +12,7 @@ import JGProgressHUD
 
 class SearchController: UIViewController {
     
-    fileprivate let searchViewModel: SearchViewModel
+    fileprivate var searchViewModel: SearchViewModelType
     fileprivate let searchView = SearchView()
     
     fileprivate let hud: JGProgressHUD = {
@@ -56,7 +56,7 @@ class SearchController: UIViewController {
         }
     }
     
-    init(searchViewModel: SearchViewModel){
+    init(searchViewModel: SearchViewModelType){
         self.searchViewModel = searchViewModel
         super .init(nibName: nil, bundle: nil)
     }
