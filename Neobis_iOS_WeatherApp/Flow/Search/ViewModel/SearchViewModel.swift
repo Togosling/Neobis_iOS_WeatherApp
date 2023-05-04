@@ -8,17 +8,12 @@
 import Foundation
 
 protocol SearchViewModelType {
-    var searchCity: String? {get set}
-    var overallWeatherModel: OverallWeatherModel {get set}
     func fetchCityData(city: String)
-    func fetchWeatherData(lat: Double, long: Double)
-    func fetchNextWeekData(lat: Double, long: Double)
 }
 
 class SearchViewModel: SearchViewModelType {
     
     var coordinator = SearchCoordinator(navController: BaseNavigationController.init())
-    var searchCity: String? {didSet {fetchCityData(city: searchCity ?? "")}}
     var overallWeatherModel = OverallWeatherModel()
     
     func fetchCityData(city: String) {
@@ -30,7 +25,7 @@ class SearchViewModel: SearchViewModelType {
         }
     }
     
-    func fetchWeatherData(lat: Double, long: Double) {
+    fileprivate func fetchWeatherData(lat: Double, long: Double) {
         Service.shared.fetchTempData(lat: lat, long: long) {[weak self] weatherGroup in
             self?.overallWeatherModel.date = DateFormat.shared.currentDate()
             self?.overallWeatherModel.temp = Int(weatherGroup.main.temp - 273)
@@ -43,7 +38,7 @@ class SearchViewModel: SearchViewModelType {
             self?.fetchNextWeekData(lat: lat, long: long)
         }
     }
-    func fetchNextWeekData(lat: Double, long: Double) {
+    fileprivate func fetchNextWeekData(lat: Double, long: Double) {
         Service.shared.fetchTempDataForWeek(lat: lat, long: long) { [weak self] nextweek in
             self?.overallWeatherModel.temp1 = Int(nextweek.list[0].main.temp - 273)
             self?.overallWeatherModel.temp2 = Int(nextweek.list[1].main.temp - 273)
@@ -69,7 +64,7 @@ class SearchViewModel: SearchViewModelType {
         }
     }
     
-    func gotoWeather() {
+    fileprivate func gotoWeather() {
         coordinator.showWeather(overallWeatherModel: overallWeatherModel)
     }
 }

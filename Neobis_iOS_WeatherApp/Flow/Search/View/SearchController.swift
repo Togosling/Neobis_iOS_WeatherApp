@@ -34,7 +34,7 @@ class SearchController: UIViewController {
     @objc fileprivate func handleSearch() {
         hud.show(in: self.view)
         guard let searchCity = searchView.searchTextField.text else {return}
-        searchViewModel.searchCity = searchCity
+        searchViewModel.fetchCityData(city: searchCity)
     }
     
     fileprivate func setupViews() {
